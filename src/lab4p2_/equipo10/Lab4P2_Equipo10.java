@@ -25,6 +25,13 @@ public class Lab4P2_Equipo10 {
             sc = new Scanner(System.in);
             comando = sc.nextLine();
             
+            String[]coord = comando.split("|");
+            String pieza = coord[0];
+            String[]mov = coord[1].split("-");
+            String mov1=mov[0];
+            String mov2=mov[1];
+            
+            boolean x = ((Pieza)movimiento(mov1,mov2,matrix));
             
         } while (comando != "gusbai");
     }
@@ -43,6 +50,7 @@ public class Lab4P2_Equipo10 {
                 } else if (i == 1) {//peones negros
                     tablero[i][j] = "p";
                 } else if (i == 6) {//peones blancos
+                    Peon p = new Peon();
                     tablero[i][j] = "P";
                 } else if (i == 0 && (j == 1 || j == 8)) {//torres negras
                     tablero[i][j] = "r";
