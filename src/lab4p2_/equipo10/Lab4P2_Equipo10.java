@@ -28,10 +28,20 @@ public class Lab4P2_Equipo10 {
             String[]coord = comando.split("|");
             String pieza = coord[0];
             String[]mov = coord[1].split("-");
-            String mov1=mov[0];
-            String mov2=mov[1];
+            String mov1=mov[0];//ubicacion actual
+            String mov2=mov[1];//destino
             
-            boolean x = ((Pieza)movimiento(mov1,mov2,matrix));
+            char pos = mov1.charAt(0);
+            int coord2 = (int) pos - 49;//valor de la letra en la matriz
+            
+            Object o = matrix[(char)coord2][mov1.charAt(1)];
+                    
+               
+            if (o instanceof Peon) {
+                ((Peon)o).Movimiento(coord2, coord2, matrix);
+            }
+//            
+//            boolean x = (movimiento(mov1,mov2,matrix));
             
         } while (comando != "gusbai");
     }
@@ -48,30 +58,41 @@ public class Lab4P2_Equipo10 {
                     tablero[i][j] = (char) abc;
                     abc++;
                 } else if (i == 1) {//peones negros
-                    tablero[i][j] = "p";
-                } else if (i == 6) {//peones blancos
                     Peon p = new Peon();
-                    tablero[i][j] = "P";
+                    tablero[i][j] = p;
+                } else if (i == 6) {//peones blancos
+                    Peon P = new Peon();
+                    tablero[i][j] = P;
                 } else if (i == 0 && (j == 1 || j == 8)) {//torres negras
-                    tablero[i][j] = "r";
+                    Torre r = new Torre();
+                    tablero[i][j] = r;
                 } else if (i == 7 && (j == 1 || j == 8)) {//torres blancas
-                    tablero[i][j] = "R";
+                    Torre R = new Torre();
+                    tablero[i][j] = R;
                 } else if (i == 0 && (j == 2 || j == 7)) {//caballos negros
-                    tablero[i][j] = "n";
+                    Caballo n = new Caballo();
+                    tablero[i][j] = n;
                 } else if (i == 7 && (j == 2 || j == 7)) {//caballos blancos
-                    tablero[i][j] = "N";
+                    Caballo N = new Caballo();
+                    tablero[i][j] = N;
                 } else if (i == 0 && (j == 3 || j == 6)) {//alfil negros
-                    tablero[i][j] = "b";
+                    Alfil b = new Alfil();
+                    tablero[i][j] = b;
                 } else if (i == 7 && (j == 3 || j == 6)) {//alfil blancos
-                    tablero[i][j] = "B";
+                    Alfil B = new Alfil();
+                    tablero[i][j] = B;
                 } else if (i == 0 && j == 4) {//reina negra
-                    tablero[i][j] = "q";
+                    Dama q = new Dama();
+                    tablero[i][j] = q;
                 } else if (i == 7 && j == 4) {//reina blanca
-                    tablero[i][j] = "Q";
+                    Dama Q = new Dama();
+                    tablero[i][j] = Q;
                 } else if (i == 0 && j == 5) {//rey negro
-                    tablero[i][j] = "k";
+                    Rey k = new Rey();
+                    tablero[i][j] = k;
                 } else if (i == 7 && j == 5) {//rey blanco
-                    tablero[i][j] = "K";
+                    Rey K = new Rey();
+                    tablero[i][j] = K;
                 } else {
                     tablero[i][j] = " ";
                 }
