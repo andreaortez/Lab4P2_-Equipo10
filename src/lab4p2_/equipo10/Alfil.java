@@ -4,9 +4,11 @@ import static lab4p2_.equipo10.Peon.first;
 
 public class Alfil extends Pieza {
 
-    public Alfil(int posI, int posJ, boolean validarMov) {
-        super(posI, posJ, validarMov);
+    public Alfil(char rep, int posI, int posJ, boolean validarMov) {
+        super(rep, posI, posJ, validarMov);
     }
+
+
 
     public Alfil() {
     }

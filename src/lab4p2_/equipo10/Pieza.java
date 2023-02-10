@@ -2,6 +2,7 @@
 package lab4p2_.equipo10;
 
 public abstract class Pieza {
+    public char rep;
     public int posI, posJ; 
     public boolean validarMov;
     
@@ -10,11 +11,14 @@ public abstract class Pieza {
         
     }
 
-    public Pieza(int posI, int posJ, boolean validarMov) {
+    public Pieza(char rep, int posI, int posJ, boolean validarMov) {
+        this.rep = rep;
         this.posI = posI;
         this.posJ = posJ;
         this.validarMov = validarMov;
     }
+
+
 
     public int getPosI() {
         return posI;

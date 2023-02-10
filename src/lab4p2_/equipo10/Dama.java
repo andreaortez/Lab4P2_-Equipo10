@@ -7,9 +7,11 @@ public class Dama extends Pieza{
     public Dama() {
     }
 
-    public Dama(int posI, int posJ, boolean validarMov) {
-        super(posI, posJ, validarMov);
+    public Dama(char rep, int posI, int posJ, boolean validarMov) {
+        super(rep, posI, posJ, validarMov);
     }
+
+
     
     @Override
     public boolean Movimiento(int NovaI, int NovaJ, int PosI, int PosJ, Object[][] matriz) {
