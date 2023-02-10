@@ -3,11 +3,22 @@ package lab4p2_.equipo10;
 
 public class Torre extends Pieza{
 
+    
+    public Torre(int posI, int posJ, int novaPosI, int novaPosJ, boolean validarMov) {
+        super(posI, posJ, novaPosI, novaPosJ, validarMov);
+    }
+    
     public Torre() {
+    }
+
+    @Override
+    public String toString() {
+        return super.toString()+" Torre{" + '}';
     }
     
     @Override
-    public boolean movimiento(String cpieza, String cmov, String[][] tablero) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        public boolean Movimiento(int NovaI, int NovaJ, Object [][] matriz){
+        return false;
     }
+
 }

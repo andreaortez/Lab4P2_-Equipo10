@@ -5,9 +5,13 @@ public class Dama extends Pieza{
 
     public Dama() {
     }
+
+    public Dama(int posI, int posJ, int novaPosI, int novaPosJ, boolean validarMov) {
+        super(posI, posJ, novaPosI, novaPosJ, validarMov);
+    }
     
-    @Override
-    public boolean movimiento(String cpieza, String cmov, String[][] tablero) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        public boolean Movimiento(int NovaI, int NovaJm, Object [][] matriz) {
+            
+        return false;
     }
 }
