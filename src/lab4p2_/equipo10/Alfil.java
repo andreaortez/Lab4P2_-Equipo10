@@ -4,15 +4,13 @@ import static lab4p2_.equipo10.Peon.first;
 
 public class Alfil extends Pieza {
 
-    public Alfil(char rep, int posI, int posJ) {
-        super(rep, posI, posJ);
-    }
-
-
-
     public Alfil() {
     }
 
+    public Alfil(char rep, int posI, int posJ, boolean color) {
+        super(rep, posI, posJ, color);
+    }
+    
     @Override
     public String toString() {
         return super.toString() + " Alfil{" + '}';

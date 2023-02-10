@@ -2,14 +2,12 @@
 package lab4p2_.equipo10;
 
 public class Rey extends Pieza{
-
-    public Rey(char rep, int posI, int posJ) {
-        super(rep, posI, posJ);
+ 
+    public Rey() {
     }
 
-    
-    
-    public Rey() {
+    public Rey(char rep, int posI, int posJ, boolean color) {
+        super(rep, posI, posJ, color);
     }
 
     @Override

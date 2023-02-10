@@ -3,13 +3,11 @@ package lab4p2_.equipo10;
 
 public class Torre extends Pieza{
 
-    public Torre(char rep, int posI, int posJ) {
-        super(rep, posI, posJ);
+    public Torre() {
     }
 
-   
-    
-    public Torre() {
+    public Torre(char rep, int posI, int posJ, boolean color) {
+        super(rep, posI, posJ, color);
     }
 
     @Override

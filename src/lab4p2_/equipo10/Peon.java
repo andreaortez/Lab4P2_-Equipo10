@@ -5,9 +5,10 @@ public class Peon extends Pieza {
     public Peon() {
     }
 
-    public Peon(char rep, int posI, int posJ) {
-        super(rep, posI, posJ);
+    public Peon(char rep, int posI, int posJ, boolean color) {
+        super(rep, posI, posJ, color);
     }
+
 
     public static boolean first() {
         return true;

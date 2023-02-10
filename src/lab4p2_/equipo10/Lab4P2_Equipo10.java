@@ -131,40 +131,40 @@ public class Lab4P2_Equipo10 {
                     tablero[i][j] = (char) abc;
                     abc++;
                 } else if (i == 1) {//peones negros
-                    Peon p = new Peon('p', i, j);
+                    Peon p = new Peon('p', i, j,false);
                     tablero[i][j] = p.rep;
                 } else if (i == 6) {//peones blancos
-                    Peon P = new Peon('P', i, j);
+                    Peon P = new Peon('P', i, j,true);
                     tablero[i][j] = P.rep;
                 } else if (i == 0 && (j == 1 || j == 8)) {//torres negras
-                    Torre r = new Torre('r', i, j);
+                    Torre r = new Torre('r', i, j,false);
                     tablero[i][j] = r.rep;
                 } else if (i == 7 && (j == 1 || j == 8)) {//torres blancas
-                    Torre R = new Torre('R', i, j);
+                    Torre R = new Torre('R', i, j,true);
                     tablero[i][j] = R.rep;
                 } else if (i == 0 && (j == 2 || j == 7)) {//caballos negros
-                    Caballo n = new Caballo('n', i, j);
+                    Caballo n = new Caballo('n', i, j,false);
                     tablero[i][j] = n.rep;
                 } else if (i == 7 && (j == 2 || j == 7)) {//caballos blancos
-                    Caballo N = new Caballo('N', i, j);
+                    Caballo N = new Caballo('N', i, j,true);
                     tablero[i][j] = N.rep;
                 } else if (i == 0 && (j == 3 || j == 6)) {//alfil negros
-                    Alfil b = new Alfil('b', i, j);
+                    Alfil b = new Alfil('b', i, j,false);
                     tablero[i][j] = b.rep;
                 } else if (i == 7 && (j == 3 || j == 6)) {//alfil blancos
-                    Alfil B = new Alfil('B', i, j);
+                    Alfil B = new Alfil('B', i, j,true);
                     tablero[i][j] = B.rep;
                 } else if (i == 0 && j == 4) {//reina negra
-                    Dama q = new Dama('q', i, j);
+                    Dama q = new Dama('q', i, j,false);
                     tablero[i][j] = q.rep;
                 } else if (i == 7 && j == 4) {//reina blanca
-                    Dama Q = new Dama('Q', i, j);
+                    Dama Q = new Dama('Q', i, j,true);
                     tablero[i][j] = Q.rep;
                 } else if (i == 0 && j == 5) {//rey negro
-                    Rey k = new Rey('k', i, j);
+                    Rey k = new Rey('k', i, j,false);
                     tablero[i][j] = k.rep;
                 } else if (i == 7 && j == 5) {//rey blanco
-                    Rey K = new Rey('K', i, j);
+                    Rey K = new Rey('K', i, j,true);
                     tablero[i][j] = K.rep;
                 } else {
                     tablero[i][j] = " ";
