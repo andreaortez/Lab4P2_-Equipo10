@@ -6,7 +6,6 @@ public abstract class Pieza {
     public Pieza() {
     }
     
-    public abstract boolean movimiento();
+    public abstract boolean movimiento(String cpieza, String cmov, String[][] tablero);
         
-    
 }
