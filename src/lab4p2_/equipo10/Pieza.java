@@ -46,6 +46,6 @@ public abstract class Pieza {
         return "Pieza{" + "posI=" + posI + ", posJ=" + posJ + ", novaPosI=" + ", validarMov=" + validarMov + '}';
     }    
     
-    public abstract boolean Movimiento(int NovaI, int NovaJ, Object [][] matriz);//NOVAI - COORDP, NOVAJ - COORDC;
+    public abstract boolean Movimiento(int NovaI, int NovaJ, int PosI, int PosJ, Object [][] matriz);//NOVAI - COORDP, NOVAJ - COORDC;
         
 }

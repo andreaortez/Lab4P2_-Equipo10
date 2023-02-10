@@ -7,49 +7,50 @@ public class Peon extends Pieza {
     public Peon() {
     }
 
-    public Peon(int posI, int posJ, int novaPosI, int novaPosJ, boolean validarMov, boolean first) {
+    public Peon(int posI, int posJ, boolean validarMov, boolean first) {
         super(posI, posJ, validarMov);
         First = true;
     }
 
+
+    public static boolean first() {
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "Peon{" + '}';
+    }
+
+        @Override
     public boolean Movimiento(int NovaI, int NovaJ, int PosI, int PosJ, Object[][] matriz) {
         boolean Movvalid;
+        boolean Inicio;
+        if (PosI==2||PosJ==6) {
+            Inicio = first();
+        }else{
+            Inicio = first();
+        }
         for (int i = 0; i < matriz.length; i++) {
             for (int j = 0; j < matriz[i].length; j++) {
                 if ((i == NovaI) && (j == NovaJ)) {
-                    if ((j != 0 && j != 8)) {
-                        if (matriz[i][j + 1] != " ") {
-                            return Movvalid = true;
-                        } else {
-                            return Movvalid = false;
-                        }
-                    } else if (matriz[i][j] == " ") {
-                        //Validacion verdadera
+                    if (Inicio== true) {
+                        
+                    }else{
+                        
                     }
-                }//
-            }
-
-        }
-        return false;
-    }
-
-    public static boolean first(int PosI, int PosJ, Object[][]matriz) {
-        for (int i = 0; i < matriz.length; i++) {
-            for (int j = 0; j < matriz[i].length; j++) {
-                if ((i == PosI) && (j == PosJ)) {
-                    for (int k = 0; k < 8; k++) {    
-                        if (true) {
-                            
+                    if ((j - 1 == -1 || j + 1 == 10)) {
+                        if (i - 1 == -1 || i + 1 == 10) {
+                            } else if (matriz[i][j] == " ") {
+                                Movvalid = true;
+                            } else {
+                                Movvalid = false;
+                            }
                         }
+                    }
+                    Movvalid = false;
+                }
             }
-        }
-    }
-    }
-            @Override
-            public String toString
-            
-                () {
-        return "Peon{" + '}';
-            }
+        return false;    }
 
-        }
+}
