@@ -3,8 +3,8 @@ package lab4p2_.equipo10;
 
 public class Torre extends Pieza{
 
-    public Torre(char rep, int posI, int posJ, boolean validarMov) {
-        super(rep, posI, posJ, validarMov);
+    public Torre(char rep, int posI, int posJ) {
+        super(rep, posI, posJ);
     }
 
    

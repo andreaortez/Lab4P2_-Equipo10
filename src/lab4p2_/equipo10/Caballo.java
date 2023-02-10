@@ -3,8 +3,8 @@ package lab4p2_.equipo10;
 
 public class Caballo extends Pieza{
 
-    public Caballo(char rep, int posI, int posJ, boolean validarMov) {
-        super(rep, posI, posJ, validarMov);
+    public Caballo(char rep, int posI, int posJ) {
+        super(rep, posI, posJ);
     }
     
     public Caballo() {

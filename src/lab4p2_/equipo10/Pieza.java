@@ -4,18 +4,18 @@ package lab4p2_.equipo10;
 public abstract class Pieza {
     public char rep;
     public int posI, posJ; 
-    public boolean validarMov;
+
     
     
     public Pieza() {
         
     }
 
-    public Pieza(char rep, int posI, int posJ, boolean validarMov) {
+    public Pieza(char rep, int posI, int posJ) {
         this.rep = rep;
         this.posI = posI;
         this.posJ = posJ;
-        this.validarMov = validarMov;
+
     }
 
 
@@ -37,17 +37,11 @@ public abstract class Pieza {
     }
 
 
-    public boolean isValidarMov() {
-        return validarMov;
-    }
 
-    public void setValidarMov(boolean validarMov) {
-        this.validarMov = validarMov;
-    }
 
     @Override
     public String toString() {
-        return "Pieza{" + "posI=" + posI + ", posJ=" + posJ + ", novaPosI=" + ", validarMov=" + validarMov + '}';
+        return "Pieza{" + "posI=" + posI + ", posJ=" + posJ + ", novaPosI=" + ", validarMov="  + '}';
     }    
     
     public abstract boolean Movimiento(int NovaI, int NovaJ, int PosI, int PosJ, Object [][] matriz);//NOVAI - COORDP, NOVAJ - COORDC;

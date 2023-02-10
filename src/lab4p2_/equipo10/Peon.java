@@ -7,8 +7,8 @@ public class Peon extends Pieza {
     public Peon() {
     }
 
-    public Peon(char rep, int posI, int posJ, boolean validarMov) {
-        super(rep, posI, posJ, validarMov);
+    public Peon(char rep, int posI, int posJ) {
+        super(rep, posI, posJ);
     }
 
 

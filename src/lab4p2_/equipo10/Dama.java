@@ -7,8 +7,8 @@ public class Dama extends Pieza{
     public Dama() {
     }
 
-    public Dama(char rep, int posI, int posJ, boolean validarMov) {
-        super(rep, posI, posJ, validarMov);
+    public Dama(char rep, int posI, int posJ) {
+        super(rep, posI, posJ);
     }
 
 
