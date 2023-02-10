@@ -5,7 +5,7 @@ public class Torre extends Pieza{
 
     
     public Torre(int posI, int posJ, int novaPosI, int novaPosJ, boolean validarMov) {
-        super(posI, posJ, novaPosI, novaPosJ, validarMov);
+        super(posI, posJ, validarMov);
     }
     
     public Torre() {

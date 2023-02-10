@@ -4,7 +4,7 @@ package lab4p2_.equipo10;
 public class Rey extends Pieza{
 
     public Rey(int posI, int posJ, int novaPosI, int novaPosJ, boolean validarMov) {
-        super(posI, posJ, novaPosI, novaPosJ, validarMov);
+        super(posI, posJ, validarMov);
     }
     
     

@@ -2,7 +2,7 @@
 package lab4p2_.equipo10;
 
 public abstract class Pieza {
-    public int posI, posJ, novaPosI, novaPosJ; 
+    public int posI, posJ; 
     public boolean validarMov;
     
     
@@ -10,11 +10,9 @@ public abstract class Pieza {
         
     }
 
-    public Pieza(int posI, int posJ, int novaPosI, int novaPosJ, boolean validarMov) {
+    public Pieza(int posI, int posJ, boolean validarMov) {
         this.posI = posI;
         this.posJ = posJ;
-        this.novaPosI = novaPosI;
-        this.novaPosJ = novaPosJ;
         this.validarMov = validarMov;
     }
 
@@ -34,21 +32,6 @@ public abstract class Pieza {
         this.posJ = posJ;
     }
 
-    public int getNovaPosI() {
-        return novaPosI;
-    }
-
-    public void setNovaPosI(int novaPosI) {
-        this.novaPosI = novaPosI;
-    }
-
-    public int getNovaPosJ() {
-        return novaPosJ;
-    }
-
-    public void setNovaPosJ(int novaPosJ) {
-        this.novaPosJ = novaPosJ;
-    }
 
     public boolean isValidarMov() {
         return validarMov;
@@ -60,7 +43,7 @@ public abstract class Pieza {
 
     @Override
     public String toString() {
-        return "Pieza{" + "posI=" + posI + ", posJ=" + posJ + ", novaPosI=" + novaPosI + ", novaPosJ=" + novaPosJ + ", validarMov=" + validarMov + '}';
+        return "Pieza{" + "posI=" + posI + ", posJ=" + posJ + ", novaPosI=" + ", validarMov=" + validarMov + '}';
     }    
     
     public abstract boolean Movimiento(int NovaI, int NovaJ, Object [][] matriz);//NOVAI - COORDP, NOVAJ - COORDC;
