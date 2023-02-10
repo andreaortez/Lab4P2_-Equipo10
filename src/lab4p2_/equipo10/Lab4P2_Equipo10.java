@@ -7,7 +7,7 @@ public class Lab4P2_Equipo10 {
     
     public static void main(String[] args) {
         String comando = "";
-        
+        System.out.println("");
         do{
             
         }while(comando!="gusbai");
