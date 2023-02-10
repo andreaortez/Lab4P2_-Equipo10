@@ -9,6 +9,7 @@ public class Lab4P2_Equipo10 {
 
     public static void main(String[] args) {
         String comando = "";
+        String jugador;
 
         System.out.print("Ingrese el nombre del jugador de piezas blancas: ");
         sc = new Scanner(System.in);
@@ -19,13 +20,17 @@ public class Lab4P2_Equipo10 {
 
         Object[][] n = LlenarMatriz(matrix);
         System.out.println("\n" + Imprimir(n));
+        
+        jugador=j1;
+        System.out.println("turno de: " + jugador);
+
+        System.out.print("Ingrese la pieza a mover y su destino: [<pieza>|<ubicación actual>-<destino>]");//p|a2-a3
+        sc = new Scanner(System.in);
+        comando = sc.nextLine();
 
         do {
-            System.out.print("Ingrese la pieza a mover y su destino: [<pieza>|<ubicación actual>-<destino>]");//p|a2-a3
-            sc = new Scanner(System.in);
-            comando = sc.nextLine();
-
             String[] coord = comando.split("|");
+            
             String[] mov = coord[1].split("-");
             String mov1 = mov[0];//ubicacion actual
             String mov2 = mov[1];//destino
@@ -37,29 +42,74 @@ public class Lab4P2_Equipo10 {
             pos = mov2.charAt(0);
             int dest1 = (int) pos - 49;
             int dest2 = mov2.charAt(1);
+            
+            if (jugador==j1) {//para validar que quiere mover las piezas blancas
+                if (matrix[ubic1][ubic2] instanceof Pieza) {
+                    if (((Pieza)matrix[ubic1][ubic2]).isColor()==false) {
+                        break;
+                    }
+                }
+            }
+            
+            if (jugador==j2) {//para validar que quiere mover las piezas negras
+                if (matrix[ubic1][ubic2] instanceof Pieza) {
+                    if (((Pieza)matrix[ubic1][ubic2]).isColor()==true) {
+                        break;
+                    }
+                }
+            }
 
             Object o = matrix[(char) ubic1][ubic2];
 
             boolean val;
             if (o instanceof Peon) {
                 val = ((Peon) o).Movimiento(ubic1, ubic2, dest1, dest2, matrix);
+                if (val) {
+                    matrix[ubic1][ubic2] = " ";
+                    matrix[dest1][dest2] = ((Peon) o).rep;
+                } else {
+                    System.out.print("Movimiento no válido\n");
+                }
             } else if (o instanceof Caballo) {
                 val = ((Caballo) o).Movimiento(ubic1, ubic2, dest1, dest2, matrix);
+                if (val) {
+                    matrix[ubic1][ubic2] = " ";
+                    matrix[dest1][dest2] = ((Caballo) o).rep;
+                } else {
+                    System.out.print("Movimiento no válido\n");
+                }
             } else if (o instanceof Alfil) {
                 val = ((Alfil) o).Movimiento(ubic1, ubic2, dest1, dest2, matrix);
+                if (val) {
+                    matrix[ubic1][ubic2] = " ";
+                    matrix[dest1][dest2] = ((Alfil) o).rep;
+                } else {
+                    System.out.print("Movimiento no válido\n");
+                }
             } else if (o instanceof Torre) {
                 val = ((Torre) o).Movimiento(ubic1, ubic2, dest1, dest2, matrix);
+                if (val) {
+                    matrix[ubic1][ubic2] = " ";
+                    matrix[dest1][dest2] = ((Torre) o).rep;
+                } else {
+                    System.out.print("Movimiento no válido\n");
+                }
             } else if (o instanceof Rey) {
                 val = ((Rey) o).Movimiento(ubic1, ubic2, dest1, dest2, matrix);
+                if (val) {
+                    matrix[ubic1][ubic2] = " ";
+                    matrix[dest1][dest2] = ((Rey) o).rep;
+                } else {
+                    System.out.print("Movimiento no válido\n");
+                }
             } else if (o instanceof Dama) {
                 val = ((Dama) o).Movimiento(ubic1, ubic2, dest1, dest2, matrix);
-            }
-
-            if (val==true) {
-                matrix[ubic1][ubic2] = " ";
-                matrix[dest1][dest2] = 
-            }else{
-                System.out.print("Movimiento no válido\n");
+                if (val) {
+                    matrix[ubic1][ubic2] = " ";
+                    matrix[dest1][dest2] = ((Dama) o).rep;
+                } else {
+                    System.out.print("Movimiento no válido\n");
+                }
             }
 
             System.out.print("Ingrese la pieza a mover y su destino: [<pieza>|<ubicación actual>-<destino>]");//p|a2-a3
@@ -81,52 +131,46 @@ public class Lab4P2_Equipo10 {
                     tablero[i][j] = (char) abc;
                     abc++;
                 } else if (i == 1) {//peones negros
-                    Peon p = new Peon();
-                    tablero[i][j] = p;
+                    Peon p = new Peon('p', i, j);
+                    tablero[i][j] = p.rep;
                 } else if (i == 6) {//peones blancos
-                    Peon P = new Peon();
-                    tablero[i][j] = P;
+                    Peon P = new Peon('P', i, j);
+                    tablero[i][j] = P.rep;
                 } else if (i == 0 && (j == 1 || j == 8)) {//torres negras
-                    Torre r = new Torre();
-                    tablero[i][j] = r;
+                    Torre r = new Torre('r', i, j);
+                    tablero[i][j] = r.rep;
                 } else if (i == 7 && (j == 1 || j == 8)) {//torres blancas
-                    Torre R = new Torre();
-                    tablero[i][j] = R;
+                    Torre R = new Torre('R', i, j);
+                    tablero[i][j] = R.rep;
                 } else if (i == 0 && (j == 2 || j == 7)) {//caballos negros
-                    Caballo n = new Caballo();
-                    tablero[i][j] = n;
+                    Caballo n = new Caballo('n', i, j);
+                    tablero[i][j] = n.rep;
                 } else if (i == 7 && (j == 2 || j == 7)) {//caballos blancos
-                    Caballo N = new Caballo();
-                    tablero[i][j] = N;
+                    Caballo N = new Caballo('N', i, j);
+                    tablero[i][j] = N.rep;
                 } else if (i == 0 && (j == 3 || j == 6)) {//alfil negros
-                    Alfil b = new Alfil();
-                    tablero[i][j] = b;
+                    Alfil b = new Alfil('b', i, j);
+                    tablero[i][j] = b.rep;
                 } else if (i == 7 && (j == 3 || j == 6)) {//alfil blancos
-                    Alfil B = new Alfil();
-                    tablero[i][j] = B;
+                    Alfil B = new Alfil('B', i, j);
+                    tablero[i][j] = B.rep;
                 } else if (i == 0 && j == 4) {//reina negra
-                    Dama q = new Dama();
-                    tablero[i][j] = q;
+                    Dama q = new Dama('q', i, j);
+                    tablero[i][j] = q.rep;
                 } else if (i == 7 && j == 4) {//reina blanca
-                    Dama Q = new Dama();
-                    tablero[i][j] = Q;
+                    Dama Q = new Dama('Q', i, j);
+                    tablero[i][j] = Q.rep;
                 } else if (i == 0 && j == 5) {//rey negro
-                    Rey k = new Rey();
-                    tablero[i][j] = k;
+                    Rey k = new Rey('k', i, j);
+                    tablero[i][j] = k.rep;
                 } else if (i == 7 && j == 5) {//rey blanco
-                    Rey K = new Rey();
-                    tablero[i][j] = K;
+                    Rey K = new Rey('K', i, j);
+                    tablero[i][j] = K.rep;
                 } else {
                     tablero[i][j] = " ";
                 }
             }
         }
-//        R1 = 6 + sc.nextInt(4);
-//        R2 = 0 + sc.nextInt(10);
-//        int O1 = 6 + sc.nextInt(4);
-//        int O2 = 0 + sc.nextInt(10);
-//        mapa[R1][R2] = "R";
-//        mapa[O1][O2] = "O";
         return tablero;
     }
 
