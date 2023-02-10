@@ -24,25 +24,48 @@ public class Lab4P2_Equipo10 {
             System.out.print("Ingrese la pieza a mover y su destino: [<pieza>|<ubicación actual>-<destino>]");//p|a2-a3
             sc = new Scanner(System.in);
             comando = sc.nextLine();
-            
-            String[]coord = comando.split("|");
-            String pieza = coord[0];
-            String[]mov = coord[1].split("-");
-            String mov1=mov[0];//ubicacion actual
-            String mov2=mov[1];//destino
-            
+
+            String[] coord = comando.split("|");
+            String[] mov = coord[1].split("-");
+            String mov1 = mov[0];//ubicacion actual
+            String mov2 = mov[1];//destino
+
             char pos = mov1.charAt(0);
-            int coord2 = (int) pos - 49;//valor de la letra en la matriz
-            
-            Object o = matrix[(char)coord2][mov1.charAt(1)];
-                    
-               
+            int ubic1 = (int) pos - 49;//primera coordenada
+            int ubic2 = mov1.charAt(1);//segunda coordenada
+
+            pos = mov2.charAt(0);
+            int dest1 = (int) pos - 49;
+            int dest2 = mov2.charAt(1);
+
+            Object o = matrix[(char) ubic1][ubic2];
+
+            boolean val;
             if (o instanceof Peon) {
-                ((Peon)o).Movimiento(coord2, coord2, matrix);
+                val = ((Peon) o).Movimiento(ubic1, ubic2, dest1, dest2, matrix);
+            } else if (o instanceof Caballo) {
+                val = ((Caballo) o).Movimiento(ubic1, ubic2, dest1, dest2, matrix);
+            } else if (o instanceof Alfil) {
+                val = ((Alfil) o).Movimiento(ubic1, ubic2, dest1, dest2, matrix);
+            } else if (o instanceof Torre) {
+                val = ((Torre) o).Movimiento(ubic1, ubic2, dest1, dest2, matrix);
+            } else if (o instanceof Rey) {
+                val = ((Rey) o).Movimiento(ubic1, ubic2, dest1, dest2, matrix);
+            } else if (o instanceof Dama) {
+                val = ((Dama) o).Movimiento(ubic1, ubic2, dest1, dest2, matrix);
             }
-//            
-//            boolean x = (movimiento(mov1,mov2,matrix));
-            
+
+            if (val==true) {
+                matrix[ubic1][ubic2] = " ";
+                matrix[dest1][dest2] = 
+            }else{
+                System.out.print("Movimiento no válido\n");
+            }
+
+            System.out.print("Ingrese la pieza a mover y su destino: [<pieza>|<ubicación actual>-<destino>]");//p|a2-a3
+            sc = new Scanner(System.in);
+            comando = sc.nextLine();
+
         } while (comando != "gusbai");
     }
 
