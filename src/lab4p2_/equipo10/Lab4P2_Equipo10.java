@@ -62,16 +62,16 @@ public class Lab4P2_Equipo10 {
 
             boolean val;
             if (o instanceof Peon) {
-
-                val = ((Peon) o).Movimiento(ubic1, ubic2, dest1, dest2, matrix);
-                if (val) {
+                val = ((Peon) o).Movimiento(ubic2, ubic1, dest2, dest1, matrix);
+                System.out.println(val);
+                if (val==true) {
                     matrix[dest2][dest1] = matrix[ubic2][ubic1];
                     matrix[ubic2][ubic1] = " ";
                 } else {
                     System.out.print("Movimiento no válido\n");
                 }
             } else if (o instanceof Caballo) {
-                val = ((Caballo) o).Movimiento(ubic1, ubic2, dest1, dest2, matrix);
+                val = ((Caballo) o).Movimiento(ubic2, ubic1, dest2, dest1, matrix);
                 if (val) {
                    matrix[dest2][dest1] = matrix[ubic2][ubic1];
                     matrix[ubic2][ubic1] = " ";
@@ -79,7 +79,7 @@ public class Lab4P2_Equipo10 {
                     System.out.print("Movimiento no válido\n");
                 }
             } else if (o instanceof Alfil) {
-                val = ((Alfil) o).Movimiento(ubic1, ubic2, dest1, dest2, matrix);
+                val = ((Alfil) o).Movimiento(ubic2, ubic1, dest2, dest1,matrix);
                 if (val) {
                     matrix[dest2][dest1] = matrix[ubic2][ubic1];
                     matrix[ubic2][ubic1] = " ";
@@ -87,7 +87,7 @@ public class Lab4P2_Equipo10 {
                     System.out.print("Movimiento no válido\n");
                 }
             } else if (o instanceof Torre) {
-                val = ((Torre) o).Movimiento(ubic1, ubic2, dest1, dest2, matrix);
+                val = ((Torre) o).Movimiento(ubic2, ubic1, dest2, dest1, matrix);
                 if (val) {
                     matrix[dest2][dest1] = matrix[ubic2][ubic1];
                     matrix[ubic2][ubic1] = " ";
@@ -95,7 +95,7 @@ public class Lab4P2_Equipo10 {
                     System.out.print("Movimiento no válido\n");
                 }
             } else if (o instanceof Rey) {
-                val = ((Rey) o).Movimiento(ubic1, ubic2, dest1, dest2, matrix);
+                val = ((Rey) o).Movimiento(ubic2, ubic1,dest2, dest1, matrix);
                 if (val) {
                     matrix[dest2][dest1] = matrix[ubic2][ubic1];
                     matrix[ubic2][ubic1] = " ";
@@ -103,7 +103,7 @@ public class Lab4P2_Equipo10 {
                     System.out.print("Movimiento no válido\n");
                 }
             } else if (o instanceof Dama) {
-                val = ((Dama) o).Movimiento(ubic1, ubic2, dest1, dest2, matrix);
+                val = ((Dama) o).Movimiento(ubic2, ubic1,dest2, dest1, matrix);
                 if (val) {
                     matrix[dest2][dest1] = matrix[ubic2][ubic1];
                     matrix[ubic2][ubic1] = " ";
