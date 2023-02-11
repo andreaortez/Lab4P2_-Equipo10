@@ -17,22 +17,36 @@ public class Torre extends Pieza{
     
     @Override
     public boolean Movimiento(int NovaI, int NovaJ, int PosI, int PosJ, Object[][] matriz) {
-        boolean Movvalid;
-        for (int i = 0; i < matriz.length; i++) {
-            for (int j = 0; j < matriz[i].length; j++) {
-                if ((i == NovaI) && (j == NovaJ)) {
-                    if ((j - 1 == -1 || j + 1 == 10)) {
-                        if (i - 1 == -1 || i + 1 == 10) {
-                            } else if (matriz[i][j] == " ") {
-                                Movvalid = true;
-                            } else {
-                                Movvalid = false;
+        for (int i = 1; i < matriz.length - 1; i++) {
+            for (int j = 1; j < matriz[i].length; j++) {
+                if ((NovaI < -1 || NovaJ > 10)) {
+                    return false;
+                } else if (NovaI < -1 || NovaJ > 10) {
+                    return false;
+                } else {
+                    int cont = 0;
+                    int a1 = 1;
+                    int b1 = -1;
+                    while (cont == 100) {
+                        if ((matriz[PosI ][PosJ = PosJ + a1]).equals(matriz[NovaI][NovaJ])) {
+                            return true;
+                        } else if ((matriz[PosI ][PosJ = PosJ - b1]) == (matriz[NovaI][NovaJ])) {
+                            return true;
+                        } else {
+                            if ((matriz[PosI][PosJ]) instanceof Pieza) {
+                                return false;
                             }
+                            a1 = a1 + 1;
+                            b1 = b1 - 1;
+                            cont = cont + 1;
                         }
                     }
-                    Movvalid = false;
+
                 }
             }
-        return false;    }
+        }
+        return false;
+
+    }
 
 }

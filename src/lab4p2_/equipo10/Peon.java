@@ -24,16 +24,34 @@ public class Peon extends Pieza {
         if (PosI == 2 || PosJ == 6) {
             Inicio = first();
         }
+<<<<<<< HEAD
 
+=======
+>>>>>>> d23d23bd9a7c2343e57b19ee4674b2b264ad383c
         for (int i = 1; i < matriz.length - 1; i++) {
             for (int j = 1; j < matriz[i].length; j++) {
                 if ((i == NovaI) && (j == NovaJ)) {
                     if (Inicio = true) {
-                        return true;
+                        if (matriz[NovaI][NovaJ] == " ") {
+                            if ((matriz[PosI][PosJ + 2]).equals(matriz[NovaI][NovaJ])) {
+                                return true;
+                            } else if ((matriz[PosI][PosJ + 1]).equals(matriz[NovaI][NovaJ])) {
+                                return true;
+                            }
+                        } else {
+                            if ((matriz[PosI + 1][PosJ + 1]).equals(matriz[NovaI][NovaJ])) {
+                                return true;
+                            } else if ((matriz[PosI - 1][PosJ + 1]).equals(matriz[NovaI][NovaJ])) {
+                                return true;
+                            }
+                        }
                     } else {
-                        return false;
+                        if ((matriz[PosI][PosJ + 1]).equals(matriz[NovaI][NovaJ])) {
+                            return true;
+                        }
                     }
                 }
+<<<<<<< HEAD
                 if (matriz[i][j] == " ") {
                     if (((j != -1 || j != 10)) && ((j != 0 || j != 9))) {
                         return true;
@@ -52,5 +70,10 @@ public class Peon extends Pieza {
         }
         return false;
 
+=======
+            }
+        }
+            return false;
+>>>>>>> d23d23bd9a7c2343e57b19ee4674b2b264ad383c
     }
 }
