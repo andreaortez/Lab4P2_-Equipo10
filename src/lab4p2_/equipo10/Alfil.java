@@ -1,7 +1,5 @@
 package lab4p2_.equipo10;
 
-import static lab4p2_.equipo10.Peon.first;
-
 public class Alfil extends Pieza {
 
     public Alfil() {
@@ -22,6 +20,7 @@ public class Alfil extends Pieza {
             for (int j = 0; j < matriz[i].length; j++) {
                     if ((j - 1 == -1 || j + 1 == 10)) {
                         if (i - 1 == -1 || i + 1 == 10) {
+                            
                             } else if (matriz[i][j] == " ") {
                                 
                             }

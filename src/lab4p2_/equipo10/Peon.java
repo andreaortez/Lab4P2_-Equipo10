@@ -45,9 +45,11 @@ public class Peon extends Pieza {
                     if ((matriz[PosI+1][PosJ+1] != " ")||(matriz[PosI-1][PosJ+1] != " ")) {
                         return true;
                     }if (matriz[PosI-1][PosJ-1]==(matriz[NovaI][NovaI])){
+                        
                 }
             }
 
+        }
         }
         return false;
     }
