@@ -52,10 +52,9 @@ public class Lab4P2_Equipo10 {
 
             if (jugador.equals(j2)) {//para validar que quiere mover las piezas negras
                 if (((Pieza) matrix[ubic2][ubic1]).isColor() == true) {
+                    System.out.println("No puede mover piezas blancas");
                     break;
                 }
-//                System.out.println("No puede mover piezas blancas");
-//                break;
             }
 
             Object o = matrix[ubic2][ubic1];
@@ -222,7 +221,7 @@ public class Lab4P2_Equipo10 {
                 if (matriz[i][j] instanceof Rey) {
                     int cont = 0, a1 = 1, b1 = -1, a = 1, b = -1, PosI = i, PosJ = j;
                     boolean cadena, tamp;
-                    while (cont == 100) {
+                    while (cont < 100) {
                         cadena = (((Rey) matriz[PosI][PosJ]).color);
                         if ((matriz[PosI = PosI + a][PosJ = PosJ + a]) != " ") {
                             if (matriz[PosI][PosJ] instanceof Dama) {
