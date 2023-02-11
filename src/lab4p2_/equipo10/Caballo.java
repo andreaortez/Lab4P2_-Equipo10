@@ -16,7 +16,7 @@ public class Caballo extends Pieza {
 
     @Override
     public boolean Movimiento(int NovaI, int NovaJ, int PosI, int PosJ, Object[][] matriz) {
-        for (int i = 1; i < matriz.length-1; i++) {
+        for (int i = 1; i < matriz.length - 1; i++) {
             for (int j = 1; j < matriz[i].length; j++) {
                 if ((i == NovaI) && (j == NovaJ)) {
                     if ((j - 1 == 0 || j + 1 == 9)) {
@@ -35,7 +35,7 @@ public class Caballo extends Pieza {
                                 return true;
                             } else if ((matriz[PosI + 2][PosJ + 1]) == (matriz[NovaI][NovaJ])) {
                                 return true;
-                            } else if ((matriz[PosI + 2][PosJ -1 ]) == (matriz[NovaI][NovaJ])) {
+                            } else if ((matriz[PosI + 2][PosJ - 1]) == (matriz[NovaI][NovaJ])) {
                                 return true;
                             } else {
                             }

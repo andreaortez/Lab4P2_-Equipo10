@@ -1,7 +1,6 @@
-
 package lab4p2_.equipo10;
 
-public class Torre extends Pieza{
+public class Torre extends Pieza {
 
     public Torre() {
     }
@@ -12,9 +11,9 @@ public class Torre extends Pieza{
 
     @Override
     public String toString() {
-        return super.toString()+" Torre{" + '}';
+        return super.toString() + " Torre{" + '}';
     }
-    
+
     @Override
     public boolean Movimiento(int NovaI, int NovaJ, int PosI, int PosJ, Object[][] matriz) {
         for (int i = 1; i < matriz.length - 1; i++) {
@@ -28,9 +27,9 @@ public class Torre extends Pieza{
                     int a1 = 1;
                     int b1 = -1;
                     while (cont == 100) {
-                        if ((matriz[PosI ][PosJ = PosJ + a1]).equals(matriz[NovaI][NovaJ])) {
+                        if ((matriz[PosI][PosJ = PosJ + a1]).equals(matriz[NovaI][NovaJ])) {
                             return true;
-                        } else if ((matriz[PosI ][PosJ = PosJ - b1]) == (matriz[NovaI][NovaJ])) {
+                        } else if ((matriz[PosI][PosJ = PosJ - b1]) == (matriz[NovaI][NovaJ])) {
                             return true;
                         } else {
                             if ((matriz[PosI][PosJ]) instanceof Pieza) {

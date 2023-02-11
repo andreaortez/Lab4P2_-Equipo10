@@ -23,7 +23,7 @@ public class Dama extends Pieza {
                     int b1 = -1;
                     int a = 1;
                     int b = -1;
-                    int PosI2= PosI;
+                    int PosI2 = PosI;
                     int PosJ2 = PosJ;
                     while (cont == 100) {
                         if ((matriz[PosI = PosI + a][PosJ = PosJ + a]).equals(matriz[NovaI][NovaJ])) {

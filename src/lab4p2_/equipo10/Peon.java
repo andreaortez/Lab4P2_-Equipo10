@@ -67,8 +67,5 @@ public class Peon extends Pieza {
         }
         return false;
 
-
-            }
-        }
-
-   
+    }
+}

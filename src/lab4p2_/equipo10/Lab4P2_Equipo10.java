@@ -48,13 +48,16 @@ public class Lab4P2_Equipo10 {
                 if (((Pieza) matrix[ubic2][ubic1]).isColor() == false) {
                     break;
                 }
+//                System.out.println("No puede mover piezas negras");
+//                break;
             }
 
             if (jugador.equals(j2)) {//para validar que quiere mover las piezas negras
                 if (((Pieza) matrix[ubic2][ubic1]).isColor() == true) {
                     break;
                 }
-
+//                System.out.println("No puede mover piezas negras");
+//                break;
             }
 
             Object o = matrix[ubic2][ubic1];
@@ -64,55 +67,62 @@ public class Lab4P2_Equipo10 {
 
                 val = ((Peon) o).Movimiento(ubic1, ubic2, dest1, dest2, matrix);
                 if (val) {
+                    matrix[dest2][dest1] = matrix[ubic2][ubic1];
                     matrix[ubic2][ubic1] = " ";
-                    matrix[dest2][dest1] = ((Peon) o).rep;
                 } else {
                     System.out.print("Movimiento no válido\n");
                 }
             } else if (o instanceof Caballo) {
                 val = ((Caballo) o).Movimiento(ubic1, ubic2, dest1, dest2, matrix);
                 if (val) {
+                   matrix[dest2][dest1] = matrix[ubic2][ubic1];
                     matrix[ubic2][ubic1] = " ";
-                    matrix[dest2][dest1] = ((Caballo) o).rep;
                 } else {
                     System.out.print("Movimiento no válido\n");
                 }
             } else if (o instanceof Alfil) {
                 val = ((Alfil) o).Movimiento(ubic1, ubic2, dest1, dest2, matrix);
                 if (val) {
+                    matrix[dest2][dest1] = matrix[ubic2][ubic1];
                     matrix[ubic2][ubic1] = " ";
-                    matrix[dest2][dest1] = ((Alfil) o).rep;
                 } else {
                     System.out.print("Movimiento no válido\n");
                 }
             } else if (o instanceof Torre) {
                 val = ((Torre) o).Movimiento(ubic1, ubic2, dest1, dest2, matrix);
                 if (val) {
+                    matrix[dest2][dest1] = matrix[ubic2][ubic1];
                     matrix[ubic2][ubic1] = " ";
-                    matrix[dest2][dest1] = ((Torre) o).rep;
                 } else {
                     System.out.print("Movimiento no válido\n");
                 }
             } else if (o instanceof Rey) {
                 val = ((Rey) o).Movimiento(ubic1, ubic2, dest1, dest2, matrix);
                 if (val) {
+                    matrix[dest2][dest1] = matrix[ubic2][ubic1];
                     matrix[ubic2][ubic1] = " ";
-                    matrix[dest2][dest1] = ((Rey) o).rep;
                 } else {
                     System.out.print("Movimiento no válido\n");
                 }
             } else if (o instanceof Dama) {
                 val = ((Dama) o).Movimiento(ubic1, ubic2, dest1, dest2, matrix);
                 if (val) {
+                    matrix[dest2][dest1] = matrix[ubic2][ubic1];
                     matrix[ubic2][ubic1] = " ";
-                    matrix[dest2][dest1] = ((Dama) o).rep;
                 } else {
                     System.out.print("Movimiento no válido\n");
                 }
             }
 
             System.out.println("\n" + Imprimir(matrix));
+//
+            if (jugador.equals(j1)) {
+                jugador = j2;
+            } else {
+                jugador = j1;
+            }
 
+            System.out.println("Turno de: " + jugador);
             System.out.print("Ingrese la pieza a mover y su destino\n[<pieza>|<ubicación actual>-<destino>]: ");//p|a2-a3
             sc = new Scanner(System.in);
             comando = sc.nextLine();
@@ -195,12 +205,12 @@ public class Lab4P2_Equipo10 {
                     cad += "[" + ((Rey) tablero[i][j]).rep + "]";
                 } else if (tablero[i][j] instanceof Dama) {
                     cad += "[" + ((Dama) tablero[i][j]).rep + "]";
-                }else{
+                } else {
                     cad += "[ ]";
+                }
             }
+            cad += "\n";
         }
-        cad += "\n";
+        return cad;
     }
-    return cad ;
-}
 }
