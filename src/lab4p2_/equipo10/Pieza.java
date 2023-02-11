@@ -29,7 +29,6 @@ public abstract class Pieza {
         this.rep = rep;
     }
 
-
     public int getPosI() {
         return posI;
     }
