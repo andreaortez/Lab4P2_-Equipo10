@@ -26,8 +26,8 @@ public class Peon extends Pieza {
             Inicio = first();
         } else {
         }
-        for (int i = 0; i < matriz.length; i++) {
-            for (int j = 0; j < matriz[i].length; j++) {
+        for (int i = 1; i < matriz.length-1; i++) {
+            for (int j = 1; j < matriz[i].length; j++) {
                 if ((i == NovaI) && (j == NovaJ)) {
                     if (Inicio = true) {
                         return true;
