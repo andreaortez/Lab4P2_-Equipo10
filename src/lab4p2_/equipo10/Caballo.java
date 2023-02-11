@@ -35,19 +35,16 @@ public class Caballo extends Pieza {
                                 return true;
                             } else if ((matriz[PosI + 2][PosJ + 1]) == (matriz[NovaI][NovaJ])) {
                                 return true;
-                            } else if ((matriz[PosI + 2][PosJ + 1]) == (matriz[NovaI][NovaJ])) {
+                            } else if ((matriz[PosI + 2][PosJ -1 ]) == (matriz[NovaI][NovaJ])) {
                                 return true;
                             } else {
-                                return false;
                             }
 
                         }
                     }
                 }
             }
-            return false;
         }
-
         return false;
     }
 
