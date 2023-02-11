@@ -114,6 +114,8 @@ public class Lab4P2_Equipo10 {
 
             System.out.println("\n" + Imprimir(matrix));
 
+            jaque(matrix);
+
             if (jugador.equals(j1)) {
                 jugador = j2;
             } else {
@@ -213,64 +215,54 @@ public class Lab4P2_Equipo10 {
     }
 
     static public String jaque(Object[][] matriz) {
-        String Jaque = " ";
+        String Jaque = "";
+
         for (int i = 1; i < matriz.length; i++) {
             for (int j = 1; j < matriz[i].length - 1; j++) {
                 if (matriz[i][j] instanceof Rey) {
-                    int cont = 0, a1 = 1, b1 = -1, a = 1, b = -1, PosI2 = i, PosJ2 = j, PosI = i, PosJ = j;
+                    int cont = 0, a1 = 1, b1 = -1, a = 1, b = -1, PosI = i, PosJ = j;
+                    boolean cadena, tamp;
                     while (cont == 100) {
-                        boolean cadena = (((Rey) matriz[PosI][PosJ]).color);
+                        cadena = (((Rey) matriz[PosI][PosJ]).color);
                         if ((matriz[PosI = PosI + a][PosJ = PosJ + a]) != " ") {
                             if (matriz[PosI][PosJ] instanceof Dama) {
-                                boolean tamp = (((Dama) matriz[PosI][PosJ]).color);
+                                tamp = (((Dama) matriz[PosI][PosJ]).color);
                                 if ((tamp = false) && (cadena = false)) {
-                                    Jaque = "Nada";
-                                } else if ((tamp = false) && (cadena = false)) {
                                     Jaque = "Nada";
                                 } else {
                                     Jaque = "Jaque";
                                 }
                             } else if (matriz[PosI][PosJ] instanceof Alfil) {
-                                boolean tamp = (((Alfil) matriz[PosI][PosJ]).color);
+                                tamp = (((Alfil) matriz[PosI][PosJ]).color);
                                 if ((tamp = false) && (cadena = false)) {
-                                    Jaque = "Nada";
-                                } else if ((tamp = false) && (cadena = false)) {
                                     Jaque = "Nada";
                                 } else {
                                     Jaque = "Jaque";
                                 }
                             } else if (matriz[PosI][PosJ] instanceof Torre) {
-                                boolean tamp = (((Torre) matriz[PosI][PosJ]).color);
+                                tamp = (((Torre) matriz[PosI][PosJ]).color);
                                 if ((tamp = false) && (cadena = false)) {
-                                    Jaque = "Nada";
-                                } else if ((tamp = false) && (cadena = false)) {
                                     Jaque = "Nada";
                                 } else {
                                     Jaque = "Jaque";
                                 }
                             } else if (matriz[PosI][PosJ] instanceof Caballo) {
-                                boolean tamp = (((Caballo) matriz[PosI][PosJ]).color);
+                                tamp = (((Caballo) matriz[PosI][PosJ]).color);
                                 if ((tamp = false) && (cadena = false)) {
-                                    Jaque = "Nada";
-                                } else if ((tamp = false) && (cadena = false)) {
                                     Jaque = "Nada";
                                 } else {
-                                    //Jaque
+                                    Jaque = "Jaque";
                                 }
                             } else if (matriz[PosI][PosJ] instanceof Rey) {
-                                boolean tamp = (((Rey) matriz[PosI][PosJ]).color);
+                                tamp = (((Rey) matriz[PosI][PosJ]).color);
                                 if ((tamp = false) && (cadena = false)) {
-                                    Jaque = "Nada";
-                                } else if ((tamp = false) && (cadena = false)) {
                                     Jaque = "Nada";
                                 } else {
                                     Jaque = "Jaque";
                                 }
                             } else if (matriz[PosI][PosJ] instanceof Peon) {
-                                boolean tamp = (((Peon) matriz[PosI][PosJ]).color);
+                                tamp = (((Peon) matriz[PosI][PosJ]).color);
                                 if ((tamp = false) && (cadena = false)) {
-                                    Jaque = "Nada";
-                                } else if ((tamp = false) && (cadena = false)) {
                                     Jaque = "Nada";
                                 } else {
                                     Jaque = "Jaque";
@@ -279,165 +271,129 @@ public class Lab4P2_Equipo10 {
 
                         } else if ((matriz[PosI = PosI + a][PosJ = PosJ - b] != " ")) {
                             if (matriz[PosI][PosJ] instanceof Dama) {
-                                boolean tamp = (((Dama) matriz[PosI][PosJ]).color);
+                                tamp = (((Dama) matriz[PosI][PosJ]).color);
                                 if ((tamp = false) && (cadena = false)) {
-                                    Jaque = "Nada";
-                                } else if ((tamp = false) && (cadena = false)) {
                                     Jaque = "Nada";
                                 } else {
-                                    //Jaque
+                                    Jaque = "Jaque";
                                 }
                             } else if (matriz[PosI][PosJ] instanceof Alfil) {
-                                boolean tamp = (((Alfil) matriz[PosI][PosJ]).color);
+                                tamp = (((Alfil) matriz[PosI][PosJ]).color);
                                 if ((tamp = false) && (cadena = false)) {
-                                    Jaque = "Nada";
-                                } else if ((tamp = false) && (cadena = false)) {
                                     Jaque = "Nada";
                                 } else {
                                     Jaque = "Jaque";
                                 }
                             } else if (matriz[PosI][PosJ] instanceof Torre) {
-                                boolean tamp = (((Torre) matriz[PosI][PosJ]).color);
+                                tamp = (((Torre) matriz[PosI][PosJ]).color);
                                 if ((tamp = false) && (cadena = false)) {
-                                    Jaque = "Nada";
-                                } else if ((tamp = false) && (cadena = false)) {
                                     Jaque = "Nada";
                                 } else {
 
                                 }
                             } else if (matriz[PosI][PosJ] instanceof Caballo) {
-                                boolean tamp = (((Caballo) matriz[PosI][PosJ]).color);
+                                tamp = (((Caballo) matriz[PosI][PosJ]).color);
                                 if ((tamp = false) && (cadena = false)) {
-                                    Jaque = "Nada";
-                                } else if ((tamp = false) && (cadena = false)) {
                                     Jaque = "Nada";
                                 } else {
-
+                                    Jaque = "Jaque";
                                 }
                             } else if (matriz[PosI][PosJ] instanceof Rey) {
-                                boolean tamp = (((Rey) matriz[PosI][PosJ]).color);
+                                tamp = (((Rey) matriz[PosI][PosJ]).color);
                                 if ((tamp = false) && (cadena = false)) {
-                                    Jaque = "Nada";
-                                } else if ((tamp = false) && (cadena = false)) {
                                     Jaque = "Nada";
                                 } else {
                                     Jaque = "Jaque";
                                 }
                             } else if (matriz[PosI][PosJ] instanceof Peon) {
-                                boolean tamp = (((Peon) matriz[PosI][PosJ]).color);
+                                tamp = (((Peon) matriz[PosI][PosJ]).color);
                                 if ((tamp = false) && (cadena = false)) {
-                                    Jaque = "Nada";
-                                } else if ((tamp = false) && (cadena = false)) {
                                     Jaque = "Nada";
                                 } else {
                                     Jaque = "Jaque";
                                 }
                             } else if ((matriz[PosI = PosI - b][PosJ = PosJ + a]) != " ") {
                                 if (matriz[PosI][PosJ] instanceof Dama) {
-                                    boolean tamp = (((Dama) matriz[PosI][PosJ]).color);
+                                    tamp = (((Dama) matriz[PosI][PosJ]).color);
                                     if ((tamp = false) && (cadena = false)) {
-                                        Jaque = "Nada";
-                                    } else if ((tamp = false) && (cadena = false)) {
                                         Jaque = "Nada";
                                     } else {
                                         Jaque = "Jaque";
                                     }
                                 } else if (matriz[PosI][PosJ] instanceof Alfil) {
-                                    boolean tamp = (((Alfil) matriz[PosI][PosJ]).color);
+                                    tamp = (((Alfil) matriz[PosI][PosJ]).color);
                                     if ((tamp = false) && (cadena = false)) {
-                                        Jaque = "Nada";
-                                    } else if ((tamp = false) && (cadena = false)) {
                                         Jaque = "Nada";
                                     } else {
                                         Jaque = "Jaque";
                                     }
                                 } else if (matriz[PosI][PosJ] instanceof Torre) {
-                                    boolean tamp = (((Torre) matriz[PosI][PosJ]).color);
+                                    tamp = (((Torre) matriz[PosI][PosJ]).color);
                                     if ((tamp = false) && (cadena = false)) {
-                                        Jaque = "Nada";
-                                    } else if ((tamp = false) && (cadena = false)) {
                                         Jaque = "Nada";
                                     } else {
                                         Jaque = "Jaque";
                                     }
                                 } else if (matriz[PosI][PosJ] instanceof Caballo) {
-                                    boolean tamp = (((Caballo) matriz[PosI][PosJ]).color);
+                                    tamp = (((Caballo) matriz[PosI][PosJ]).color);
                                     if ((tamp = false) && (cadena = false)) {
-                                        Jaque = "Nada";
-                                    } else if ((tamp = false) && (cadena = false)) {
                                         Jaque = "Nada";
                                     } else {
                                         Jaque = "Jaque";
                                     }
                                 } else if (matriz[PosI][PosJ] instanceof Rey) {
-                                    boolean tamp = (((Rey) matriz[PosI][PosJ]).color);
+                                    tamp = (((Rey) matriz[PosI][PosJ]).color);
                                     if ((tamp = false) && (cadena = false)) {
-                                        Jaque = "Nada";
-                                    } else if ((tamp = false) && (cadena = false)) {
                                         Jaque = "Nada";
                                     } else {
                                         Jaque = "Jaque";
                                     }
                                 } else if (matriz[PosI][PosJ] instanceof Peon) {
-                                    boolean tamp = (((Peon) matriz[PosI][PosJ]).color);
+                                    tamp = (((Peon) matriz[PosI][PosJ]).color);
                                     if ((tamp = false) && (cadena = false)) {
-                                        Jaque = "Nada";
-                                    } else if ((tamp = false) && (cadena = false)) {
                                         Jaque = "Nada";
                                     } else {
                                         Jaque = "Jaque";
                                     }
                                 } else if ((matriz[PosI = PosI - b][PosJ = PosJ - b]) != " ") {
                                     if (matriz[PosI][PosJ] instanceof Dama) {
-                                        boolean tamp = (((Dama) matriz[PosI][PosJ]).color);
+                                        tamp = (((Dama) matriz[PosI][PosJ]).color);
                                         if ((tamp = false) && (cadena = false)) {
-                                            Jaque = "Nada";
-                                        } else if ((tamp = false) && (cadena = false)) {
                                             Jaque = "Nada";
                                         } else {
                                             Jaque = "Jaque";
                                         }
                                     } else if (matriz[PosI][PosJ] instanceof Alfil) {
-                                        boolean tamp = (((Alfil) matriz[PosI][PosJ]).color);
+                                        tamp = (((Alfil) matriz[PosI][PosJ]).color);
                                         if ((tamp = false) && (cadena = false)) {
-                                            Jaque = "Nada";
-                                        } else if ((tamp = false) && (cadena = false)) {
                                             Jaque = "Nada";
                                         } else {
                                             Jaque = "Jaque";
                                         }
                                     } else if (matriz[PosI][PosJ] instanceof Torre) {
-                                        boolean tamp = (((Torre) matriz[PosI][PosJ]).color);
+                                        tamp = (((Torre) matriz[PosI][PosJ]).color);
                                         if ((tamp = false) && (cadena = false)) {
-                                            Jaque = "Nada";
-                                        } else if ((tamp = false) && (cadena = false)) {
                                             Jaque = "Nada";
                                         } else {
                                             Jaque = "Jaque";
                                         }
                                     } else if (matriz[PosI][PosJ] instanceof Caballo) {
-                                        boolean tamp = (((Caballo) matriz[PosI][PosJ]).color);
+                                        tamp = (((Caballo) matriz[PosI][PosJ]).color);
                                         if ((tamp = false) && (cadena = false)) {
-                                            Jaque = "Nada";
-                                        } else if ((tamp = false) && (cadena = false)) {
                                             Jaque = "Nada";
                                         } else {
                                             Jaque = "Jaque";
                                         }
                                     } else if (matriz[PosI][PosJ] instanceof Rey) {
-                                        boolean tamp = (((Rey) matriz[PosI][PosJ]).color);
+                                        tamp = (((Rey) matriz[PosI][PosJ]).color);
                                         if ((tamp = false) && (cadena = false)) {
-                                            Jaque = "Nada";
-                                        } else if ((tamp = false) && (cadena = false)) {
                                             Jaque = "Nada";
                                         } else {
                                             Jaque = "Jaque";
                                         }
                                     } else if (matriz[PosI][PosJ] instanceof Peon) {
-                                        boolean tamp = (((Peon) matriz[PosI][PosJ]).color);
+                                        tamp = (((Peon) matriz[PosI][PosJ]).color);
                                         if ((tamp = false) && (cadena = false)) {
-                                            Jaque = "Nada";
-                                        } else if ((tamp = false) && (cadena = false)) {
                                             Jaque = "Nada";
                                         } else {
                                             Jaque = "Jaque";
@@ -447,11 +403,9 @@ public class Lab4P2_Equipo10 {
                                         b1 = b1 - 1;
                                         a = a + 1;
                                         b = b - 1;
-
                                         cont = cont + 1;
                                     }
                                 }
-
                             }
                         }
                     }
@@ -459,5 +413,6 @@ public class Lab4P2_Equipo10 {
             }
         }
         return Jaque;
-
     }
+
+}
