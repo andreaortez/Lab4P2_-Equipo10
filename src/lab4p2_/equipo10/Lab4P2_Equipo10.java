@@ -22,9 +22,9 @@ public class Lab4P2_Equipo10 {
         System.out.println("\n" + Imprimir(n));
         
         jugador=j1;
-        System.out.println("turno de: " + jugador);
+        System.out.println("Turno de: " + jugador);
 
-        System.out.print("Ingrese la pieza a mover y su destino: [<pieza>|<ubicación actual>-<destino>]");//p|a2-a3
+        System.out.print("Ingrese la pieza a mover y su destino ->\n[<pieza>|<ubicación actual>-<destino>]: ");//p|a2-a3
         sc = new Scanner(System.in);
         comando = sc.nextLine();
 
@@ -111,8 +111,10 @@ public class Lab4P2_Equipo10 {
                     System.out.print("Movimiento no válido\n");
                 }
             }
+            
+            System.out.println("\n" + Imprimir(matrix));
 
-            System.out.print("Ingrese la pieza a mover y su destino: [<pieza>|<ubicación actual>-<destino>]");//p|a2-a3
+            System.out.print("Ingrese la pieza a mover y su destino\n[<pieza>|<ubicación actual>-<destino>]: ");//p|a2-a3
             sc = new Scanner(System.in);
             comando = sc.nextLine();
 
@@ -120,13 +122,13 @@ public class Lab4P2_Equipo10 {
     }
 
     static public Object[][] LlenarMatriz(Object[][] tablero) {
-        int pos1 = 8, abc = 65;
+        int pos1 = 1, abc = 65;
 
         for (int i = 0; i < tablero.length; i++) {//fila
             for (int j = 0; j < tablero[0].length; j++) {//columna
-                if (j == 0 && pos1 > 0) {//8-1
+                if (j == 0 && pos1<9) {//1-8
                     tablero[i][j] = pos1;
-                    pos1--;
+                    pos1++;
                 } else if (i == tablero.length - 1 && j > 0) {//A-H
                     tablero[i][j] = (char) abc;
                     abc++;
