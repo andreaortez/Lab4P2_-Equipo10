@@ -16,36 +16,29 @@ public class Caballo extends Pieza {
 
     @Override
     public boolean Movimiento(int NovaI, int NovaJ, int PosI, int PosJ, Object[][] matriz) {
-        for (int i = 1; i < matriz.length - 1; i++) {
-            for (int j = 1; j < matriz[i].length; j++) {
-                if ((i == NovaI) && (j == NovaJ)) {
-                    if ((j - 1 == 0 || j + 1 == 9)) {
-                        if (i - 1 == 0 || i + 1 == 9) {
-                            if ((matriz[PosI + 1][PosJ + 2]).equals(matriz[NovaI][NovaJ])) {
-                                return true;
-                            } else if ((matriz[PosI + 1][PosJ - 2]) == (matriz[NovaI][NovaJ])) {
-                                return true;
-                            } else if ((matriz[PosI - 1][PosJ + 2]) == (matriz[NovaI][NovaJ])) {
-                                return true;
-                            } else if ((matriz[PosI - 1][PosJ - 2]) == (matriz[NovaI][NovaJ])) {
-                                return true;
-                            } else if ((matriz[PosI - 2][PosJ - 1]) == (matriz[NovaI][NovaJ])) {
-                                return true;
-                            } else if ((matriz[PosI - 2][PosJ - 1]) == (matriz[NovaI][NovaJ])) {
-                                return true;
-                            } else if ((matriz[PosI + 2][PosJ + 1]) == (matriz[NovaI][NovaJ])) {
-                                return true;
-                            } else if ((matriz[PosI + 2][PosJ - 1]) == (matriz[NovaI][NovaJ])) {
-                                return true;
-                            } else {
-                            }
-
-                        }
-                    }
-                }
+        if (matriz[NovaI][NovaJ] == " ") {
+            if ((matriz[PosI + 2][PosJ + 1]).equals(matriz[NovaI][NovaJ])) {//negras --- derecha
+                return true;
+            } else if ((matriz[PosI + 2][PosJ - 1]) == (matriz[NovaI][NovaJ])) {//izquierda
+                return true;
+            } else if ((matriz[PosI - 2][PosJ + 1]) == (matriz[NovaI][NovaJ])) {//blanca derehca
+                return true;
+            } else if ((matriz[PosI - 2][PosJ - 1]) == (matriz[NovaI][NovaJ])) {//blanca izquierda
+                return true;
+//                        } else if ((matriz[PosI - 2][PosJ - 1]) == (matriz[NovaI][NovaJ])) {
+//                            return true;
+//                        } else if ((matriz[PosI - 2][PosJ - 1]) == (matriz[NovaI][NovaJ])) {
+//                            return true;
+//                        } else if ((matriz[PosI + 2][PosJ + 1]) == (matriz[NovaI][NovaJ])) {
+//                            return true;
+//                        } else if ((matriz[PosI + 2][PosJ - 1]) == (matriz[NovaI][NovaJ])) {
+//                            return true;
+            } else {
+                return false;
             }
+        } else {
+            return false;
         }
-        return false;
-    }
 
+    }
 }

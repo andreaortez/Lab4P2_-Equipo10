@@ -20,9 +20,6 @@ public class Peon extends Pieza {
 
         if (((NovaI == -1 || NovaI == 8)) || ((NovaJ == 0 || NovaJ == 9))) {//para que no se salga del tablero
             return false;
-        } else if ((matriz[NovaI][NovaJ] != " ") || (matriz[NovaI][NovaJ] != " ")) {//para comer
-            System.out.println("entré1");
-            return true;
         }
 
         if (PosI == 1 || PosI == 6) {
@@ -30,15 +27,15 @@ public class Peon extends Pieza {
         }
 
         if (matriz[NovaI][NovaJ] == " ") {
-            if (Inicio==false) {//si no es pieza inicial
+            if (Inicio == false) {//si no es pieza inicial
                 if ((matriz[PosI - 1][PosJ]).equals(matriz[NovaI][NovaJ])) {//peon blanco
                     return true;
                 } else if ((matriz[PosI + 1][PosJ]).equals(matriz[NovaI][NovaJ])) {//peon negro
                     return true;
-                }else{
+                } else {
                     return false;
                 }
-            }else if ((matriz[PosI + 2][PosJ]).equals(matriz[NovaI][NovaJ])) {//si es pieza inicial negra
+            } else if ((matriz[PosI + 2][PosJ]).equals(matriz[NovaI][NovaJ])) {//si es pieza inicial negra
                 return true;
             } else if ((matriz[PosI + 1][PosJ]).equals(matriz[NovaI][NovaJ])) {
                 return true;
@@ -46,10 +43,12 @@ public class Peon extends Pieza {
                 return true;
             } else if ((matriz[PosI - 1][PosJ]).equals(matriz[NovaI][NovaJ])) {
                 return true;
-            }else{
-                
+            } else if ((matriz[PosI][PosJ-1] instanceof Pieza) || (matriz[PosI][PosJ-1] instanceof Pieza)) {//para comer
+                return true;
+            } else {
                 return false;
             }
+
         } else {
             return false;
         }

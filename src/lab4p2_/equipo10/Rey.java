@@ -16,31 +16,27 @@ public class Rey extends Pieza {
 
     @Override
     public boolean Movimiento(int NovaI, int NovaJ, int PosI, int PosJ, Object[][] matriz) {
-        for (int i = 0; i < matriz.length; i++) {
-            for (int j = 0; j < matriz[i].length; j++) {
-                if ((i == NovaI) && (j == NovaJ)) {
-                    if ((j - 1 == -1 || j + 1 == 10)) {
-                        if (i - 1 == -1 || i + 1 == 10) {
-                            if (matriz[NovaI][NovaJ] == " ") {
-                                if ((matriz[PosI][PosJ + 2]).equals(matriz[NovaI][NovaJ])) {
-                                    return true;
-                                } else if ((matriz[PosI][PosJ + 1]).equals(matriz[NovaI][NovaJ])) {
-                                    return true;
-                                }
-                            } else {
-                                if ((matriz[PosI + 1][PosJ + 1]).equals(matriz[NovaI][NovaJ])) {
-                                    return true;
-                                } else if ((matriz[PosI - 1][PosJ + 1]).equals(matriz[NovaI][NovaJ])) {
-                                    return true;
-                                }
-                            }
-                        } else {
-                            if ((matriz[PosI][PosJ + 1]).equals(matriz[NovaI][NovaJ])) {
-                                return true;
-                            }
-                        }
-                    }
+        if ((NovaI < 1 || NovaJ > 8)) {
+            if (matriz[NovaI][NovaJ] == " ") {
+                if ((matriz[PosI + 1][PosJ]).equals(matriz[NovaI][NovaJ])) {//arriba
+                    return true;
+                } else if ((matriz[PosI][PosJ + 1]).equals(matriz[NovaI][NovaJ])) {//lado derecho
+                    return true;
+                } else if ((matriz[PosI + 1][PosJ + 1]).equals(matriz[NovaI][NovaJ])) {//arriba derecha
+                    return true;
+                } else if ((matriz[PosI + 1][PosJ - 1]).equals(matriz[NovaI][NovaJ])) {//arriba izquierda
+                    return true;
+                } else if ((matriz[PosI - 1][PosJ + 1]).equals(matriz[NovaI][NovaJ])) {//abajo derecho
+                    return true;
+                } else if ((matriz[PosI - 1][PosJ - 1]).equals(matriz[NovaI][NovaJ])) {//abajo izquierda
+                    return true;
+                } else if ((matriz[PosI][PosJ - 1]).equals(matriz[NovaI][NovaJ])) {//lado izquierdo
+                    return true;
+                } else if ((matriz[PosI - 1][PosJ]).equals(matriz[NovaI][NovaJ])) {//abajo
+                    return true;
                 }
+            } else {
+                return false;
             }
         }
         return false;
