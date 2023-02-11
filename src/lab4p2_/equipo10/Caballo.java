@@ -23,7 +23,9 @@ public class Caballo extends Pieza {
                         if (i - 1 == -1 || i + 1 == 10) {
                             if ((matriz[PosI + 1][PosJ + 2]).equals(matriz[NovaI][NovaJ])) {
                                 else if (matriz[PosI - 1][PosJ + 2]) == (matriz[NovaI][NovaJ]) {
+                                            else if (matriz[PosI - 1][PosJ + 2]) == (matriz[NovaI][NovaJ]) {
                                         else if (matriz[PosI - 1][PosJ + 2]) == (matriz[NovaI][NovaJ]) {
+                                }
 //                                        else if matriz[PosI - 1 [PosJ - 2] == matriz[NovaI][NovaJ]
 //                                                else if matriz[PosI - 2][PosJ - 1] == matriz[NovaI][NovaJ]{
 //                                            else if matriz[PosI + 2PosJ + 1] == matriz[NovaI][NovaJ]
