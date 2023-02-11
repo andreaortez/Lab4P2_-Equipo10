@@ -1,7 +1,5 @@
 package lab4p2_.equipo10;
 
-import static lab4p2_.equipo10.Peon.first;
-
 public class Alfil extends Pieza {
 
     public Alfil() {
