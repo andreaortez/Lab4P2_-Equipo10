@@ -30,7 +30,7 @@ public class Peon extends Pieza {
                         } else if ((matriz[PosI - 1][PosJ + 1]).equals(matriz[NovaI][NovaJ])) {
                             return true;
                         }
-                    } else {
+                    } else {//si es pieza inicial
                         if (matriz[NovaI][NovaJ] == " ") {
                             if ((matriz[PosI][PosJ + 2]).equals(matriz[NovaI][NovaJ])) {
                                 return true;

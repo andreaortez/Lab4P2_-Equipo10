@@ -8,7 +8,7 @@ public class Lab4P2_Equipo10 {
     static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
-        String comando = "";
+        String comando;
         String jugador;
 
         System.out.print("Ingrese el nombre del jugador de piezas blancas: ");
@@ -44,19 +44,17 @@ public class Lab4P2_Equipo10 {
             int dest2 = Integer.parseInt(String.valueOf(mov2.charAt(1)));
 
             if (jugador.equals(j1)) {//para validar que quiere mover las piezas blancas
-                System.out.println("entra");
                 if (((Pieza) matrix[ubic2][ubic1]).isColor() == false) {
+                    System.out.println("No puede mover piezas negras");
                     break;
                 }
-//                System.out.println("No puede mover piezas negras");
-//                break;
             }
 
             if (jugador.equals(j2)) {//para validar que quiere mover las piezas negras
                 if (((Pieza) matrix[ubic2][ubic1]).isColor() == true) {
                     break;
                 }
-//                System.out.println("No puede mover piezas negras");
+//                System.out.println("No puede mover piezas blancas");
 //                break;
             }
 
@@ -115,7 +113,7 @@ public class Lab4P2_Equipo10 {
             }
 
             System.out.println("\n" + Imprimir(matrix));
-//
+
             if (jugador.equals(j1)) {
                 jugador = j2;
             } else {
@@ -127,7 +125,7 @@ public class Lab4P2_Equipo10 {
             sc = new Scanner(System.in);
             comando = sc.nextLine();
 
-        } while (comando != "gusbai");
+        } while (!"gusbai".equals(comando));
     }
 
     static public Object[][] LlenarMatriz(Object[][] tablero) {

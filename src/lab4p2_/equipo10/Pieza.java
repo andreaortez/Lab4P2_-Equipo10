@@ -7,7 +7,6 @@ public abstract class Pieza {
     public boolean color;
 
     public Pieza() {
-
     }
 
     public Pieza(char rep, int posI, int posJ, boolean color) {
