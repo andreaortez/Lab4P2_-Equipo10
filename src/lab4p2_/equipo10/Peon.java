@@ -36,7 +36,7 @@ public class Peon extends Pieza {
                     }
                 }
                 if (matriz[i][j] == " ") {
-                    if ((j != -1 || j != 10)) {
+                    if (((j != -1 || j != 10))&&((j != 0 || j != 9))) {
                         return true;
                     } else {
                         return false;
@@ -44,7 +44,7 @@ public class Peon extends Pieza {
                 } else {
                     if ((matriz[PosI+1][PosJ+1] != " ")||(matriz[PosI-1][PosJ+1] != " ")) {
                         return true;
-                    }
+                    }if (matriz[PosI-1][PosJ-1]==(matriz[NovaI][NovaI])){
                 }
             }
 
